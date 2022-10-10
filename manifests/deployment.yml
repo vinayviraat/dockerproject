@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "devopstest-dc69"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "devopstest-dc69"
+  template:
+    metadata:
+      labels:
+        app: "devopstest-dc69"
+    spec:
+      containers:
+        - name: "devopstest-dc69"
+          image: "testhello.azurecr.io/devopstest"
+          ports:
+          - containerPort: 80
